@@ -16,13 +16,13 @@
       <a class="navbar-brand" href="#">BE POSITIVE</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li class="active"><a href="food.html">Food</a></li>
-      <li><a href="exercise.html">Exercise</a></li>
-      <li><a href="games.html">Games</a></li>
-      <li><a href="vent.html">Vent Box</a></li>
-      <li><a href="other.html">Other</a></li>
+      <li><a href="{{ url_for('render_static', page_name='home') }}">Home</a></li>
+      <li><a href="{{ url_for('render_static', page_name='about') }}">About</a></li>
+      <li class="active"><a href="{{ url_for('render_static', page_name='food') }}">Food</a></li>
+      <li><a href="{{ url_for('render_static', page_name='exercise') }}">Exercise</a></li>
+      <li><a href="{{ url_for('render_static', page_name='games') }}">Games</a></li>
+      <li><a href="{{ url_for('render_static', page_name='vent') }}">Vent Box</a></li>
+      <li><a href="{{ url_for('render_static', page_name='other') }}">Other</a></li>
     </ul>
   </div>
 </nav>
