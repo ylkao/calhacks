@@ -6,6 +6,11 @@
 
 We created this project for CalHacks 4.0, which took place in October of 2017.
 
+### Why:
+
+Lots of college students are super stressed most or all of the time! We know this from personal experience and
+from our friends. We wanted to make something that could help reduce stress and just make people.. happy :)
+
 ### What:
 
 Positivity Place is a web app which allows users to relax in a positive and happy environment. The 
