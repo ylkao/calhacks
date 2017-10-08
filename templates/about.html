@@ -13,7 +13,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">BE POSITIVE</a>
+      <a class="navbar-brand" href="{{ url_for('render_static', page_name='home') }}">BE POSITIVE</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="{{ url_for('render_static', page_name='home') }}">Home</a></li>
@@ -30,8 +30,11 @@
 <div class="container">
   <h3>About</h3>
   <p>Life is stressful, but life is also really good. Take a minute to treat yourself to fried chicken, do some yoga, or mindlessly scroll through (wholesome) memes. You deserve it :) 
+  <br><br>
+  <h3>Founders: <h3><br>
+  Ashley Chien: Hi! I'm Ashley! I like computer science, cats, and reading :)
   <br>
-  Founders: Ashley Chien, Yiling Kao
+  Yiling Kao: Hi everyone! I'm Yiling (pronounced Ee-ling), and I'm studying computer science at UC Berkeley. I love dogs, fruits, beaches, and Disneyland, so I'm sure we have something in common :)
   </p>
 </div>
 

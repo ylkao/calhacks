@@ -19,9 +19,11 @@ def render_static(page_name):
 def load_images(lastindex):
 	client = pymongo.MongoClient(uri, connect=False)
 	db = client.get_default_database()
-	img = db['test']
-	print "sad"
-	return dumps(img.find({}))
+	memes = db['test']
+	animal = db['aww']
+	text = db['quotes']
+	temp = {"memes": dumps(memes.find({})), "animal": dumps(animal.find({})), "text": dumps(text.find({}))}
+	return dumps(temp)
     #get mongodb results as a json array
 
 	# return arr

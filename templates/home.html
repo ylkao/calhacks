@@ -13,7 +13,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">BE POSITIVE</a>
+      <a class="navbar-brand" href="{{ url_for('render_static', page_name='home') }}">BE POSITIVE</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="{{ url_for('render_static', page_name='home') }}">Home</a></li>
@@ -36,41 +36,70 @@
 </html>
 <script>
   var lastindex = 0;
-  $.ajax({
-    dataType: "json",
-    url: "http://127.0.0.1:5000/api/v1/loadimages/"+lastindex+"/",
-    success: function (data) {
-      for(i = 0; i < 5; i++) {
-        var img = "<img src="+data[i][i]+"><br>";
-        $("body").append(img);
-      }
-      lastindex += 5;
-    },
-    error: function (e) {
-      console.log(e);
-    }
-  })
-</script>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-  //javascript, lastindex variable global
-  var lastindex = 0;
-  /*function get_images(start) {
-    var arr;
-    for (var i = start; i < 5; i++) {
+  $.ajax ({
+  dataType: "json",
+  url: "http://127.0.0.1:5000/api/v1/loadimages/"+lastindex+"/",
+  success: function (data) {
 
+    for (var property in data) {
+      var obj = JSON.parse(data[property]);
+
+      /*console.log(typeof property);
+      console.log(data[property]);
+      console.log(data[property][0]);
+      var temp = JSON.parse(data[property]);
+      console.log(typeof temp);
+      console.log(typeof temp[0]);
+      console.log(temp[0]);
+      console.log(temp[0][0]);*/
+      if (property == "memes" || property == "animal") {
+        var img = "<img src="+obj[0][0]+"><br>";
+        $("body").append(img);
+      } else if (property == "text") {
+        var txt = "<p>"+obj[0][0]+"</p><br>";
+        $("body").append(txt);
+      }
+      console.log(property);
     }
-  }*/
-  $.ajax({
-    dataType: "json",
-    url: "http://127.0.0.1:5000/api/v1/loadimages/0/",
-    data: data,
-    success: function (data) {
-      console.log(data);
-    },
-    error: function (e) {
-      console.log(e);
+
+    console.log("done")
+    /*for(i = 0; i < 5; i++) {
+      var img = "<img src="+data[i][i]+"><br>";
+      $("body").append(img);
     }
-  })
+    lastindex += 5;*/
+  },
+  error: function (e) {
+    console.log(e);
+  }
+});
+/*
+  var processing = false;
+
+  $(window).scroll( function() {
+    if(processing) 
+      return false;
+    if ($(window).scrollTop() >= ($(document).height() - $(window).height())*0.7) {
+      processing = true;
+        $.ajax ({
+          dataType: "json",
+          url: "http://127.0.0.1:5000/api/v1/loadimages/"+lastindex+"/",
+          success: function (data) {
+            for(i = lastindex; i < lastindex+5; i++) {
+              var img = "<img src="+data[i][i]+"><br>";
+              $("body").append(img);
+            }
+            lastindex += 5;
+            processing = false;
+          },
+          error: function (e) {
+            console.log(e);
+          }
+        });
+    }
+  });*/
+
+
 
   //this is a function
   //issue ajax request to /api/v1/.... when you're at the bottom of the page (event handler)
@@ -79,9 +108,7 @@
   //and update lastindex
 
   //call the function when it hits the bottom of the page, 
+</script>
 
-
-
-</script>-->
 </head>
 <body>
