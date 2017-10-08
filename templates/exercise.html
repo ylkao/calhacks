@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>BE POSITIVE</title>
+  <title>Positivity Place</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    p, li {
+      font-size: 1.5em;
+    }
+    iframe {
+      width: 100%;
+      height: 500px;
+    }
+
+</style>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{{ url_for('render_static', page_name='home') }}">BE POSITIVE</a>
+      <a class="navbar-brand" href="{{ url_for('render_static', page_name='home') }}">Positivity Place</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="{{ url_for('render_static', page_name='home') }}">Home</a></li>
@@ -28,30 +38,28 @@
 </nav>
   
 <div class="container">
-  <h3>Exercise</h3>
-  <h4>Simple home workouts!</h4>
-   <iframe width="30%" height="60%"
+  <h1>Exercise</h1>
+  <p>Simple home workouts!</p>
+   <iframe 
     src="https://www.youtube.com/embed/watch?v=FOM3HjVx9JU&list=FLIJwWYOfsCfz6PjxbONYXSg">
 </iframe> 
-<iframe width="30%" height="60%"
+<iframe
     src="https://www.youtube.com/embed/watch?v=I5COzZlxaI4&list=PL5lPziO_t_VihSUj6jvYDHpt4ZcPhV2bg">
 </iframe> 
-<iframe width="30%" height="60%"
-    src="https://www.youtube.com/embed/watch?v=u8sC_bhpCYQ&list=PLui6Eyny-Uzw1DKEgFQZ5m38iZAXF1Xk5">
+<iframe 
+    src="https://www.youtube.com/watch?v=dcqW72d5JjI&list=PLui6Eyny-UzxL6NjFMYD5-vESNii8_aLi">
 </iframe> 
 
 
-  <h4>Try out some of these fun activities on your own or with some friends!</h4>
+  <p>Try out some of these fun activities on your own or with some friends!</p>
   <ul>
-    <li>Grab a frisbee and play a quick game</li>
+    <li>Head to the nearest gym, pool, or park and breathe some fresh air!</li>
     <li>Try a few jumping jacks, sit-ups, or push-ups. </li>
-    <li>You're never to old for hide-and-seek.</li>
+    <li>You're never too old for hide-and-seek.</li>
     <li>Buy yourself a hula-hoop, jumprope, or ping-pong table!</li>
     <li>Walk your dog/your neighbor's dog, or better yet, go to the local animal shelter and adopt a dog to walk.</li>
-    <li>Go for a quick jog, even if it's just 5 minutes</li>
+    <li>Go for a quick jog, even if it's just 5 minutes.</li>
   </ul>
-  <p></p>
-  <h4>Find a nearby gym, pool, or park near you!</h4>
 </div>
 
 </body>

@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>BE POSITIVE</title>
+  <title>Positivity Place</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    p {
+      margin: auto;
+      text-align: center;
+      font-size: 1.5em;
+    }
+    body {
+      margin: auto;
+      text-align: center;
+    }
+    .transbox {
+      text-align: center;
+      font-color: black;
+      opacity: 0.5;
+      padding: 10%;
+      font-size: 2em;
+    }
+    .check {
+      margin-left: 10%;
+    }
+    img {
+      margin: auto;
+      display: block;
+      height: 500px;
+    }
+  </style>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{{ url_for('render_static', page_name='home') }}">BE POSITIVE</a>
+      <a class="navbar-brand" href="{{ url_for('render_static', page_name='home') }}">Positivity Place</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="{{ url_for('render_static', page_name='home') }}">Home</a></li>
@@ -28,14 +54,35 @@
 </nav>
   
 <div class="container">
-  <h3>Positivity Feed</h3>
-  <p>Come mindlessly scroll through cute animal pictures, inspirational quotes, and (wholesome) memes.</p>
+  <h1>Positivity Feed</h1>
+  <p>Welcome! Come mindlessly scroll through cute animal pictures, inspirational quotes, and wholesome memes.</p><br>
+  <!--<div class="check">Include:<br>
+  Cute Animal Pictures: <input type="checkbox" id="awwCheck">
+  Inspirational Quotes: <input type="checkbox", id="quoteCheck">
+  Wholesome Memes: <input type="checkbox", id="memeCheck"></div><br><br><br>-->
+
 </div>
 
 </body>
 </html>
 <script>
   var lastindex = 0;
+  /*var animalCheck = document.getElementById("awwCheck").checked;
+  var memeCheck = document.getElementById("memeCheck").checked;
+  var quoteCheck = document.getElementById("quoteCheck").checked;*/
+
+  //credits: https://www.codecademy.com/en/forum_questions/525e864c80ff338580001a53
+  function randomColor() {
+    var safeColors = ['00','33','66','99','cc','ff'];
+    var rand = function() {
+        return Math.floor(Math.random()*6);
+    };
+    var r = safeColors[rand()];
+    var g = safeColors[rand()];
+    var b = safeColors[rand()];
+    return "#"+r+g+b;
+  }
+
   $.ajax ({
   dataType: "json",
   url: "http://127.0.0.1:5000/api/v1/loadimages/"+lastindex+"/",
@@ -43,26 +90,22 @@
 
     for (var property in data) {
       var obj = JSON.parse(data[property]);
-
-      /*console.log(typeof property);
-      console.log(data[property]);
-      console.log(data[property][0]);
-      var temp = JSON.parse(data[property]);
-      console.log(typeof temp);
-      console.log(typeof temp[0]);
-      console.log(temp[0]);
-      console.log(temp[0][0]);*/
       if (property == "memes" || property == "animal") {
-        var img = "<img src="+obj[0][0]+"><br>";
+        var img = "<img src="+obj[0][0]+"><br><br><br>";
         $("body").append(img);
       } else if (property == "text") {
-        var txt = "<p>"+obj[0][0]+"</p><br>";
+        var color = randomColor();
+        var txt;
+        if (color !== "#ffffff") {
+          txt = "<p class='transbox' style='color: white; background-color:"+color+"'>"+obj[0][0]+"</p><br><br><br>";
+        } else {
+          txt = "<p class='transbox' style='color: black; background-color:"+color+"'>"+obj[0][0]+"</p><br><br><br>";
+        }
         $("body").append(txt);
       }
-      console.log(property);
     }
+    lastindex += 1;
 
-    console.log("done")
     /*for(i = 0; i < 5; i++) {
       var img = "<img src="+data[i][i]+"><br>";
       $("body").append(img);
@@ -73,7 +116,7 @@
     console.log(e);
   }
 });
-/*
+
   var processing = false;
 
   $(window).scroll( function() {
@@ -85,11 +128,28 @@
           dataType: "json",
           url: "http://127.0.0.1:5000/api/v1/loadimages/"+lastindex+"/",
           success: function (data) {
-            for(i = lastindex; i < lastindex+5; i++) {
+            /*for(i = lastindex; i < lastindex+5; i++) {
               var img = "<img src="+data[i][i]+"><br>";
               $("body").append(img);
             }
-            lastindex += 5;
+            lastindex += 5;*/
+            for (var property in data) {
+              var obj = JSON.parse(data[property]);
+              if ((property == "memes" || property == "animal") && (typeof obj[lastindex] !== "undefined") && (typeof obj[lastindex][lastindex] !== "undefined")) {
+                var img = "<img src="+obj[lastindex][lastindex]+"><br><br><br>";
+                $("body").append(img);
+              } else if (property == "text") {
+                var color = randomColor();
+                var txt;
+                if (color !== "#ffffff") {
+                  txt = "<p class='transbox' style='color: white; background-color:"+color+"'>"+obj[lastindex][lastindex]+"</p><br><br><br>";
+                } else {
+                  txt = "<p class='transbox' style='color: black; background-color:"+color+"'>"+obj[lastindex][lastindex]+"</p><br><br><br>";
+                }
+                $("body").append(txt);
+              }
+            }
+            lastindex += 1;
             processing = false;
           },
           error: function (e) {
@@ -97,7 +157,7 @@
           }
         });
     }
-  });*/
+  });
 
 
 

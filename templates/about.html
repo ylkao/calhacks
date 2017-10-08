@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>BE POSITIVE</title>
+  <title>Positivity Place</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  p {
+    font-size: 1.5em;
+  }
+</style>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{{ url_for('render_static', page_name='home') }}">BE POSITIVE</a>
+      <a class="navbar-brand" href="{{ url_for('render_static', page_name='home') }}">Positivity Place</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="{{ url_for('render_static', page_name='home') }}">Home</a></li>
@@ -28,14 +33,19 @@
 </nav>
   
 <div class="container">
-  <h3>About</h3>
-  <p>Life is stressful, but life is also really good. Take a minute to treat yourself to fried chicken, do some yoga, or mindlessly scroll through (wholesome) memes. You deserve it :) 
+  <h1>About</h1>
+  <p>Life is stressful, but life is also really good. Take a minute to treat yourself to fried chicken, do some yoga, or scroll through our positivity feed. You deserve it :) <br><br>
+    Positivity Place Founders,
   <br><br>
-  <h3>Founders: <h3><br>
-  Ashley Chien: Hi! I'm Ashley! I like computer science, cats, and reading :)
-  <br>
-  Yiling Kao: Hi everyone! I'm Yiling (pronounced Ee-ling), and I'm studying computer science at UC Berkeley. I love dogs, fruits, beaches, and Disneyland, so I'm sure we have something in common :)
+  Ashley Chien and Yiling Kao
   </p>
+  <br>
+  <!--<h2>Founders: </h2><p>
+  <h3>Ashley Chien</h3> <img src="ashley_crop.jpeg"><br>
+  Hi! I'm Ashley! I like computer science, cats, and reading :)
+  <br>
+  <h3>Yiling Kao</h3><img src="yiling.jpg"><br> Hi everyone! I'm Yiling (pronounced Ee-ling), and I'm studying computer science at UC Berkeley. I love dogs, fruits, beaches, and Disneyland, so I'm sure we have something in common :)
+  </p>-->
 </div>
 
 </body>

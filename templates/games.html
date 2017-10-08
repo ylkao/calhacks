@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>BE POSITIVE</title>
+  <title>Positivity Place</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  p {
+      font-size: 1.5em;
+    }
+  .miniclip-game-embed {
+    margin: auto;
+  }
+</style>
 </head>
 <body>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{{ url_for('render_static', page_name='home') }}">BE POSITIVE</a>
+      <a class="navbar-brand" href="{{ url_for('render_static', page_name='home') }}">Positivity Place</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="{{ url_for('render_static', page_name='home') }}">Home</a></li>
@@ -28,9 +36,23 @@
 </nav>
   
 <div class="container">
-  <h3>Basic Navbar Example</h3>
-  <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
-</div>
+  <h3>Games</h3>
+  <p>Play a few games to take your mind off things!</p>
+  <!-- Cut the Rope-->
+<div class="miniclip-game-embed" data-game-name="cut-the-rope" data-theme="5" data-width="1024" data-height="576" data-language="en"><a href="http://www.miniclip.com/games/cut-the-rope/">Play Cut the Rope</a></div>
+<p style="text-align:center;"><a href="http://www.miniclip.com/games/cut-the-rope/" target="_blank">Play Cut the Rope</a> / More <a href="http://www.miniclip.com/games/genre-1/" target="_blank">Puzzle games</a></p>
 
+<!-- agar -->
+<div class="miniclip-game-embed" data-game-name="agar-io" data-theme="5" data-width="1200" data-height="1000" data-language="en"><a href="http://www.miniclip.com/games/agar-io/">Play Agar.io</a></div>
+<p style="text-align:center;"><a href="http://www.miniclip.com/games/agar-io/" target="_blank">Play Agar.io</a> / More <a href="http://www.miniclip.com/games/genre-2/" target="_blank">Multiplayer games</a></p>
+
+<!-- ovar -->
+<div class="miniclip-game-embed" data-game-name="ovario" data-theme="5" data-width="1280" data-height="720" data-language="en"><a href="http://www.miniclip.com/games/ovario/">Play Ovar.io</a></div>
+<p style="text-align:center;"><a href="http://www.miniclip.com/games/ovario/" target="_blank">Play Ovar.io</a> / More <a href="http://www.miniclip.com/games/genre-1320/" target="_blank">IO games</a></p>
+
+
+</div>
+<!-- games -->
+<script src="//static.miniclipcdn.com/js/game-embed.js"></script>
 </body>
 </html>
