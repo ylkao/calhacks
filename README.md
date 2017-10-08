@@ -28,7 +28,7 @@ Tools Used:
 
 If you want to check out our web app, both PyMongo and Flask are required.
 
-### The Future!:
+### The Future!
 Other things that we wanted to include in the positivity feed, but didn't quite have time for:
 - Survey/check-in: How are you feeling right now? 1 - 10 (Only ask one time per website click)
 - More content, such as jokes, Youtube videos, happy news articles
