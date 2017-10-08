@@ -16,35 +16,21 @@
       <a class="navbar-brand" href="#">BE POSITIVE</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="home.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="food.html">Food</a></li>
-      <li><a href="exercise.html">Exercise</a></li>
-      <li><a href="games.html">Games</a></li>
-      <li><a href="vent.html">Vent Box</a></li>
-      <li><a href="#">Other</a></li>
+      <li><a href="{{ url_for('render_static', page_name='home') }}">Home</a></li>
+      <li><a href="{{ url_for('render_static', page_name='about') }}">About</a></li>
+      <li><a href="{{ url_for('render_static', page_name='food') }}">Food</a></li>
+      <li class="active"><a href="{{ url_for('render_static', page_name='exercise') }}">Exercise</a></li>
+      <li><a href="{{ url_for('render_static', page_name='games') }}">Games</a></li>
+      <li><a href="{{ url_for('render_static', page_name='vent') }}">Vent Pillow</a></li>
+      <li><a href="{{ url_for('render_static', page_name='other') }}">Other</a></li>
     </ul>
   </div>
 </nav>
   
 <div class="container">
-  <h3>Positivity Feed</h3>
-  <p>What better way to take a break than to mindlessly scroll through cute puppy videos or mindless memes?</p>
+  <h3>Basic Navbar Example</h3>
+  <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
 </div>
 
 </body>
 </html>
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-  
-
-
-</script>
-<script>
-
-</script>
-</head>
-<body>
